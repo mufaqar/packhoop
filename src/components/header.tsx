@@ -6,7 +6,6 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { BsTelephone } from 'react-icons/bs'
 import { FaBars } from 'react-icons/fa'
 
-
 function Header() {
   return (
     <header className='py-4 border-b border-[#D9D9D987]'>
