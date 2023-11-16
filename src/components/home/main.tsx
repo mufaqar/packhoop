@@ -25,7 +25,7 @@ function MainBanner() {
                 <div className='px-5 flex gap-2 items-center'>
                     <Image src="/images/shipping.png" alt="shipping" width={54} height={30} />
                     <div>
-                        <h3 className='text-base leading-4 font-semibold'>
+                        <h3 className='text-base leading-4 font-semibold text-title_Clr'>
                             Free Shipping & Return
                         </h3>
                         <p className='text-sm font-normal text-txt_Clr'>
@@ -36,7 +36,7 @@ function MainBanner() {
                 <div className='px-5 flex gap-2 items-center'>
                     <Image src="/images/support.png" alt="support" width={40} height={33} />
                     <div>
-                        <h3 className='text-base leading-4 font-semibold'>
+                        <h3 className='text-base leading-4 font-semibold text-title_Clr'>
                             Customer Support 24/7
                         </h3>
                         <p className='text-sm font-normal text-txt_Clr'>
@@ -47,7 +47,7 @@ function MainBanner() {
                 <div className='px-5 flex gap-2 items-center'>
                     <Image src="/images/secured.png" alt="secured" width={37} height={30} />
                     <div>
-                        <h3 className='text-base leading-4 font-semibold'>
+                        <h3 className='text-base leading-4 font-semibold text-title_Clr'>
                             100% Secured Payment
                         </h3>
                         <p className='text-sm font-normal text-txt_Clr'>
@@ -58,7 +58,7 @@ function MainBanner() {
                 <div className='px-5 flex gap-2 items-center'>
                     <Image src="/images/gurantee.png" alt="gurantee" width={38} height={35} />
                     <div>
-                        <h3 className='text-base leading-4 font-semibold'>
+                        <h3 className='text-base leading-4 font-semibold text-title_Clr'>
                             Money Back Guarantee
                         </h3>
                         <p className='text-sm font-normal text-txt_Clr'>
