@@ -1,7 +1,7 @@
 import React from 'react'
 import PackingBox from './packingBox'
 
-function Packaging() {
+function Packaging_Style() {
     return (
         <section className='py-16'>
             <div className='container mx-auto px-4'>
@@ -40,4 +40,4 @@ function Packaging() {
     )
 }
 
-export default Packaging
+export default Packaging_Style
