@@ -6,7 +6,7 @@ function Testimonials() {
         <section className='py-16 bg-[#F7F7F7]'>
             <div className='container mx-auto px-4'>
                 <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-7'>
-                    <div className='bg-white py-14 lg:px-12 px-5 rounded-[10px] shadow-[0_4px_63px_0_rgba(0,0,0,0.1)]'>
+                    <div className='bg-white py-14 lg:px-12 px-5 rounded-[10px] shadow-[0_4px_63px_0_rgba(0,0,0,0.1)] hover:shadow-none'>
                         <div>
                             <h3 className='text-xl font-semibold text-title_Clr mb-4'>
                                 MY ATHLETE BOX
@@ -33,7 +33,7 @@ function Testimonials() {
                             </li>
                         </ul>
                     </div>
-                    <div className='bg-white py-14 lg:px-12 px-5 rounded-[10px] shadow-[0_4px_63px_0_rgba(0,0,0,0.1)]'>
+                    <div className='bg-white py-14 lg:px-12 px-5 rounded-[10px] shadow-[0_4px_63px_0_rgba(0,0,0,0.1)] hover:shadow-none'>
                         <div>
                             <h3 className='text-xl font-semibold text-title_Clr mb-4'>
                                 SIMPLICITY TEAS
@@ -60,7 +60,7 @@ function Testimonials() {
                             </li>
                         </ul>
                     </div>
-                    <div className='bg-white py-14 lg:px-12 px-5 rounded-[10px] shadow-[0_4px_63px_0_rgba(0,0,0,0.1)]'>
+                    <div className='bg-white py-14 lg:px-12 px-5 rounded-[10px] shadow-[0_4px_63px_0_rgba(0,0,0,0.1)] hover:shadow-none'>
                         <div>
                             <h3 className='text-xl font-semibold text-title_Clr mb-4'>
                                 OVRY™
