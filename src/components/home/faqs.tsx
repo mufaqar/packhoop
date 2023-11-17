@@ -26,7 +26,7 @@ function Faqs() {
                 <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
                     {[0, 1, 2, 3, 4, 5, 6, 7]?.map((faq: any, index: number) => (
                         <div key={index}>
-                            <h3 className='md:text-2xl textlg font-semibold text-title_Clr flex items-center cursor-pointer' onClick={() => handleFaq(index)}>
+                            <h3 className='md:text-2xl text-lg font-semibold text-title_Clr flex items-center cursor-pointer' onClick={() => handleFaq(index)}>
                                 <FaCircleArrowRight className="text-secondary w-16" />
                                 Can I get a sample before placing an order?
                             </h3>
