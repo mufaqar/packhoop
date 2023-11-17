@@ -1,7 +1,9 @@
 import React from 'react'
 import PackingBox from './packingBox'
+import { urlForImage } from '../../../sanity/lib/image'
 
-function Packaging_Style() {
+function Packaging_Style({ data }: any) {
+
     return (
         <section className='py-16'>
             <div className='container mx-auto px-4'>
@@ -14,26 +16,16 @@ function Packaging_Style() {
                     </p>
                 </div>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
-                    <PackingBox
-                        title="Mailer Boxes"
-                        content="A stylish and durable corrugated mailer box that is great for shipping. An ideal choice for subscription boxes, gift boxes, and e-commerce packaging."
-                        img="/images/pack/1.png"
-                    />
-                    <PackingBox
-                        title="Rigid Boxes"
-                        content="Durable and sturdy packaging solutions that offer a high-end look. Perfect for luxury products, gifts, and upscale brands in need of premium packaging."
-                        img="/images/pack/2.png"
-                    />
-                    <PackingBox
-                        title="Product Boxes"
-                        content="A slim box style used to hold and present a product made from an SBS paperboard. An ideal choice for retail products like chocolate, cosmetics, etc."
-                        img="/images/pack/3.png"
-                    />
-                    <PackingBox
-                        title="Shipping Boxes"
-                        content="Our custom shipping boxes made of strong corrugated cardboard are incredibly sturdy and long-lasting. Best for shipping large or heavy items."
-                        img="/images/pack/1.png"
-                    />
+                    {
+                        data.map((category: any, i: number) => (
+                            <PackingBox
+                                key={i}
+                                title={category?.name}
+                                content={category?.excerpt}
+                                img={urlForImage(category?.image.asset._ref).width(306).url()}
+                            />
+                        ))
+                    }
                 </div>
             </div>
         </section>

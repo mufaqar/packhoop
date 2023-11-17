@@ -11,6 +11,8 @@ import SearchForm from './searchForm'
 function Header() {
   const [openNav, setOpenNav] = useState(false);
   const [openSearch, setOpenSearch] = useState(false)
+  
+
   return (
     <>
       <header className='py-4 border-b border-[#D9D9D987]'>
