@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import Qoute_Form from './qoute-form'
+import Qoute_Form from '../category/qoute-form'
 
 function Banner() {
     return (
@@ -8,7 +8,7 @@ function Banner() {
             <div className='container mx-auto px-4 grid lg:grid-cols-2 grid-cols-1 gap-7'>
                 <div>
                     <h1 className='md:text-5xl text-3xl font-semibold text-title_Clr'>
-                        MAILER BOX PACKAGING
+                        Kraft Mailer Boxes
                     </h1>
                     <p className='text-lg leading-6 my-5 max-w-[510px]'>
                         Ship your products in the latest trendy and safe mailer boxes customized uniquely to make a good impression of your brand.
