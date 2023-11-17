@@ -17,10 +17,10 @@ function Get_Started() {
                     </p>
                 </div>
                 <div className='mt-10 flex justify-center gap-3'>
-                    <Link href="#" className='bg-primary hover:bg-white px-8 py-4 text-sm font-semibold text-white hover:text-primary block w-[193px] text-center border border-primary rounded-[5px]'>
+                    <Link href="#" className='bg-primary hover:bg-white md:px-8 py-4 text-sm font-semibold text-white hover:text-primary block w-[193px] text-center border border-primary rounded-[5px]'>
                         Request for Quote
                     </Link>
-                    <Link href="#" className='bg-white hover:bg-primary px-8 py-4 text-sm font-semibold text-primary hover:text-white block w-[193px] text-center border border-primary rounded-[5px]'>
+                    <Link href="#" className='bg-white hover:bg-primary md:px-8 py-4 text-sm font-semibold text-primary hover:text-white block w-[193px] text-center border border-primary rounded-[5px]'>
                         Call US Now
                     </Link>
                 </div>
