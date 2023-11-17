@@ -7,19 +7,22 @@ import Why_ChooseUs from '@/components/home/why-choose'
 import Testimonials from '@/components/home/testimonials'
 import Faqs from '@/components/home/faqs'
 import Get_Qoute from '@/components/home/get-qoute'
+import { client } from '../../sanity/lib/client'
+import {Qcategories, Qfaqs, Qproducts, Qtestimonials} from '../../sanity/queries'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({testimonialsRes, faqRes, categoriesRes, productsRes}:any) {
+
   return (
     <main className={``} >
       <MainBanner />
-      <Packaging_Style />
+      <Packaging_Style data={categoriesRes}/>
       <HowIt_work />
-      <Packing_Design />
+      <Packing_Design data={productsRes}/>
       <Why_ChooseUs />
-      <Testimonials />
-      <Faqs />
+      <Testimonials data={testimonialsRes}/>
+      <Faqs data={faqRes}/>
       <section className='py-16'>
         <div className='container mx-auto px-4'>
           <div>
@@ -41,4 +44,19 @@ export default function Home() {
       <Get_Qoute />
     </main>
   )
+}
+
+
+
+export async function getServerSideProps() {
+  const testimonialsRes = await client.fetch(Qtestimonials);
+  const faqRes = await client.fetch(Qfaqs);
+  const categoriesRes = await client.fetch(Qcategories);
+  const productsRes = await client.fetch(Qproducts);
+  return {
+    props: {
+      testimonialsRes, faqRes, categoriesRes, productsRes,
+      preview: true
+    }
+  };
 }

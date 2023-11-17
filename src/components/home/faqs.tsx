@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { FaCircleArrowRight } from 'react-icons/fa6'
 
-function Faqs() {
-    const [open, setOpen] = useState<any>(0);
+function Faqs({data}:any) {
 
+    const [open, setOpen] = useState<any>(0);
     const handleFaq = (id: any) => {
         if (open === id) {
             return setOpen(null);
@@ -24,15 +24,15 @@ function Faqs() {
                     </p>
                 </div>
                 <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
-                    {[0, 1, 2, 3, 4, 5, 6, 7]?.map((faq: any, index: number) => (
+                    {data?.map((faq: any, index: number) => (
                         <div key={index}>
                             <h3 className='md:text-2xl textlg font-semibold text-title_Clr flex items-center cursor-pointer' onClick={() => handleFaq(index)}>
                                 <FaCircleArrowRight className="text-secondary w-16" />
-                                Can I get a sample before placing an order?
+                                {faq?.question}
                             </h3>
                             <div className={`mt-3 md:pl-16 pl-10 `}>
                                 <p className='md:text-lg text-base font-normal text-txt_Clr'>
-                                    Yes, you can get a packaging sample, but it is only on demand, and you will have to pay for it.
+                                    {faq?.answer}
                                 </p>
                             </div>
                         </div>
