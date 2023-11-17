@@ -1,0 +1,142 @@
+export const products = {
+  name: 'products',
+  type: 'document',
+  title: 'Products',
+  fields: [
+    {
+      name: 'title',
+      type: 'string',
+      title: 'Title'
+    },
+    {
+      name: 'excerpt',
+      type: 'text',
+      title: 'Excerpt'
+    },
+    {
+      title: 'Feature Image',
+      name: 'image',
+      type: 'image',
+      options: {
+        hotspot: true // <-- Defaults to false
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alt',
+        },
+      ]
+    },
+    {
+      name: 'gallery',
+      type: 'array',
+      title: 'Gallery',
+      of: [
+        {
+          name: 'image',
+          type: 'image',
+          title: 'Image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+            },
+          ],
+        },
+      ],
+      options: {
+        layout: 'grid',
+      },
+    },
+    {
+      name: 'secound_title',
+      type: 'string',
+      title: '2nd Title'
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: [
+        {
+          type: 'block'
+        },
+        {
+          type: 'image',
+          fields: [
+            {
+              type: 'text',
+              name: 'alt',
+              title: 'Alternative text',
+              description: `Some of your visitors cannot see images, 
+                  be they blind, color-blind, low-sighted; 
+                  alternative text is of great help for those 
+                  people that can rely on it to have a good idea of 
+                  what\'s on your page.`,
+              options: {
+                isHighlighted: true
+              }
+            }
+          ]
+        },
+      ]
+    },
+    {
+      name: 'categories',
+      type: 'reference',
+      to: [{ type: 'categories' }]
+    },
+    {
+      title: 'Grid',
+      name: 'grid',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              title: 'Image',
+              name: 'image',
+              type: 'image',
+              options: {
+                hotspot: true
+              }
+            },
+            {
+              name: 'title',
+              type: 'string',
+              title: 'Title'
+            },
+            {
+              title: 'List',
+              name: 'list',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    {
+                      name: 'title',
+                      type: 'string',
+                      title: 'Title'
+                    },
+                    {
+                      name: 'content',
+                      type: 'text',
+                      title: 'Content'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+  ]
+}
