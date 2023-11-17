@@ -6,7 +6,7 @@ function Cta() {
     return (
         <section className='bg-secondary'>
             <div className='flex lg:flex-row flex-col gap-10'>
-                <div className='lg:w-1/2 w-full lg:py-16 py-10'>
+                <div className='lg:w-1/2 w-full lg:py-16 py-10 px-4'>
                     <div className='max-w-[610px] lg:ml-auto'>
                         <h2 className='md:text-4xl text-3xl font-normal text-white'>
                             Get Started with Mailer Boxes Today
