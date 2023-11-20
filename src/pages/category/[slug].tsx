@@ -8,12 +8,18 @@ import Order_Process from '@/components/category/order-process'
 import Technical_Specs from '@/components/category/technical-specs'
 import DesignBox from '@/components/home/designBox'
 import React from 'react'
+import { client } from '../../../sanity/lib/client'
+import {Qproducts, QSingleCategory} from '../../../sanity/queries'
+import { useRouter } from 'next/router'
+import { urlForImage } from '../../../sanity/lib/image'
 
-export default function Category() {
+export default function Category({categoryRes, productsRes}:any) {
+    const {query} = useRouter()
+    const relatedProducts = productsRes.filter((item:any) =>item.categories.slug.current === query.slug)
     return (
         <main>
-            <Banner />
-            <Get_Started />
+            <Banner data={categoryRes}/>
+            <Get_Started data={categoryRes}/>
             <section className='py-16'>
                 <div className='container mx-auto px-4 grid gap-16'>
                     <ContentBox
@@ -38,38 +44,15 @@ export default function Category() {
                         </h2>
                     </div>
                     <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
-                        <DesignBox
-                            title="COSMETIC BOXES"
-                            img="/images/design/1.png"
-                        />
-                        <DesignBox
-                            title="MAILER BOXES"
-                            img="/images/design/2.png"
-                        />
-                        <DesignBox
-                            title="CANDLE BOXES"
-                            img="/images/design/3.png"
-                        />
-                        <DesignBox
-                            title="CANDLE BOXES"
-                            img="/images/design/4.png"
-                        />
-                        <DesignBox
-                            title="DISPLAY BOXES"
-                            img="/images/design/5.png"
-                        />
-                        <DesignBox
-                            title="BEVERAGE BOXES"
-                            img="/images/design/6.png"
-                        />
-                        <DesignBox
-                            title="ECO FRIENDLY BOXES"
-                            img="/images/design/7.png"
-                        />
-                        <DesignBox
-                            title="GIFT BOXES"
-                            img="/images/design/8.png"
-                        />
+                    {
+                        relatedProducts?.map((product: any, i: number) => (
+                            <DesignBox
+                                key={i}
+                                title={product.title}
+                                img={urlForImage(product?.image.asset._ref).width(306).url()}
+                            />
+                        ))
+                    }
                     </div>
                 </div>
             </section>
@@ -81,3 +64,17 @@ export default function Category() {
         </main>
     )
 }
+
+
+
+export async function getServerSideProps(pageContext:any) {
+    const catSlug = pageContext.query.slug;
+    const categoryRes = await client.fetch(QSingleCategory, {catSlug});
+    const productsRes = await client.fetch(Qproducts);
+    return {
+      props: {
+        categoryRes, productsRes,
+        preview: true
+      }
+    };
+  }
