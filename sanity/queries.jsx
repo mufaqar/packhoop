@@ -10,6 +10,7 @@ export const Qproducts = `*[ _type == "products"]{
      _createdAt,
      image,
      gallery,
+     slug,
      excerpt,
      content,
      categories->{
@@ -18,6 +19,6 @@ export const Qproducts = `*[ _type == "products"]{
      }
 }`;
 
-export const QSingleCategory = ` *[ _type == "categories" && slug.current == $catSlug ][0]`;
+export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]`;
 
-export const QSingleProducts = ` *[ _type == "products" && slug.current == $productSlug ][0]`;
+export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug ][0]`;

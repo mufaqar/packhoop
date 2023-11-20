@@ -31,7 +31,7 @@ function Header() {
               {NavLinks?.map((item: any, idx: number) => {
                 return (
                   <li key={idx}>
-                    <Link href="#" className='text-base font-bold text-title_Clr hover:text-secondary'>
+                    <Link href={`/${item?.link}`} className='text-base font-bold text-title_Clr hover:text-secondary'>
                       {item?.name}
                     </Link>
                   </li>

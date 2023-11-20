@@ -43,13 +43,3 @@ export default function Product({productRes}:any) {
 }
 
 
-export async function getServerSideProps(pageContext:any) {
-    const productSlug = pageContext.query.slug;
-    const productRes = await client.fetch(QSingleProducts, {productSlug});
-    return {
-      props: {
-        productRes,
-        preview: true
-      }
-    };
-  }
