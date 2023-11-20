@@ -2,18 +2,27 @@ import Image from 'next/image'
 import React from 'react'
 import Qoute_Form from '../category/qoute-form'
 
-function Banner() {
+import Product_Gallery from './product-gallery'
+
+import { urlForImage } from '../../../sanity/lib/image'
+
+
+function Banner({data}:any) {
     return (
         <section className='h-full pt-20'>
             <div className='container mx-auto px-4 grid lg:grid-cols-2 grid-cols-1 gap-7'>
                 <div>
                     <h1 className='md:text-5xl text-3xl font-semibold text-title_Clr'>
-                        Kraft Mailer Boxes
+                        {data?.title}
                     </h1>
                     <p className='text-lg leading-6 my-5 max-w-[510px]'>
-                        Ship your products in the latest trendy and safe mailer boxes customized uniquely to make a good impression of your brand.
+                        {data?.excerpt}
                     </p>
-                    <Image src="/images/category-baner.png" alt='category-baner' width={534} height={400} className='mx-auto' />
+
+                    <Product_Gallery />
+
+                    <Image src={urlForImage(data?.image.asset._ref).width(534)?.url()} alt='category-baner' width={534} height={400} className='mx-auto' />
+
                 </div>
                 <div>
                     <Qoute_Form />

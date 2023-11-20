@@ -8,12 +8,14 @@ import Technical_Specs from '@/components/category/technical-specs'
 import Banner from '@/components/products/banner'
 import Qoute_Sec from '@/components/products/qoute-sec'
 import React from 'react'
+import { client } from '../../../sanity/lib/client'
+import { QSingleProducts } from '../../../sanity/queries'
 
-export default function Product() {
+export default function Product({productRes}:any) {
     return (
         <main>
-            <Banner />
-            <Get_Started />
+            <Banner data={productRes}/>
+            <Get_Started data={productRes}/>
             <section className='py-16'>
                 <div className='container mx-auto px-4 grid gap-16'>
                     <ContentBox
@@ -39,3 +41,15 @@ export default function Product() {
         </main>
     )
 }
+
+
+export async function getServerSideProps(pageContext:any) {
+    const productSlug = pageContext.query.slug;
+    const productRes = await client.fetch(QSingleProducts, {productSlug});
+    return {
+      props: {
+        productRes,
+        preview: true
+      }
+    };
+  }
