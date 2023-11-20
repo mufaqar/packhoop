@@ -19,7 +19,7 @@ export default function (req, res) {
      // step-2
      const mailData = {
           from: EMAIL,
-          to: `mufaqar@gmail.com,homeandgardenmasters@gmail.com, ${req.body.email}`,
+          to: `mufaqar@gmail.com, ${req.body.email}`,
           subject: `Message From ${req.body.name}`,
           text: req.body.detail + " | Sent from: " + req.body.email,
           html: `
@@ -32,19 +32,8 @@ export default function (req, res) {
           `,
      }
 
-     const mailDataForProposal = {
-          from: EMAIL,
-          to: `mufaqar@gmail.com, homeandgardenmasters@gmail.com`,
-          subject: `Proposal`,
-          text: "",
-          html: `
-          <p><strong>Your Proposal: </strong> ${req.body.proposal}</p>
-          `,
-          
-     }
-
      // step-3
-     transporter.sendMail(req.body?.proposal ? mailDataForProposal : mailData , function (err, info) {
+     transporter.sendMail(mailData , function (err, info) {
           if (err)
                console.log(err)
           else {

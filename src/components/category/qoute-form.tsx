@@ -111,7 +111,7 @@ function Qoute_Form() {
                 </div>
                 <div className="w-full">
                     <button type='submit' className="text-base font-semibold text-white bg-primary hover:bg-secondary px-4 py-3 rounded-[5px] w-full">
-                        SUBMIT
+                        {loading ? 'SENDING...' : 'SUBMIT'}
                     </button>
                 </div>
             </form>
