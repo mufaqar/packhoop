@@ -13,6 +13,7 @@ import {Qcategories, Qfaqs, Qproducts, Qtestimonials} from '../../sanity/queries
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({testimonialsRes, faqRes, categoriesRes, productsRes}:any) {
+console.log("🚀 ~ file: index.tsx:16 ~ Home ~ productsRes:", productsRes)
 
   return (
     <main className={``} >

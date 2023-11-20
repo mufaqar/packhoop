@@ -9,6 +9,19 @@ export const categories = {
       title: 'Name'
     },
     {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 200, // will be ignored if slugify is set
+        slugify: (input: string) => input
+                             .toLowerCase()
+                             .replace(/\s+/g, '-')
+                             .slice(0, 200)
+      }
+    },
+    {
       name: 'excerpt',
       type: 'text',
       title: 'Excerpt'
@@ -61,52 +74,52 @@ export const categories = {
         },
       ]
     },
-    {
-      title: 'Grid',
-      name: 'grid',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            {
-              title: 'Image',
-              name: 'image',
-              type: 'image',
-              options: {
-                hotspot: true
-              }
-            },
-            {
-              name: 'title',
-              type: 'string',
-              title: 'Title'
-            },
-            {
-              title: 'List',
-              name: 'list',
-              type: 'array',
-              of: [
-                {
-                  type: 'object',
-                  fields: [
-                    {
-                      name: 'title',
-                      type: 'string',
-                      title: 'Title'
-                    },
-                    {
-                      name: 'content',
-                      type: 'text',
-                      title: 'Content'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    // {
+    //   title: 'Grid',
+    //   name: 'grid',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       type: 'object',
+    //       fields: [
+    //         {
+    //           title: 'Image',
+    //           name: 'image',
+    //           type: 'image',
+    //           options: {
+    //             hotspot: true
+    //           }
+    //         },
+    //         {
+    //           name: 'title',
+    //           type: 'string',
+    //           title: 'Title'
+    //         },
+    //         {
+    //           title: 'List',
+    //           name: 'list',
+    //           type: 'array',
+    //           of: [
+    //             {
+    //               type: 'object',
+    //               fields: [
+    //                 {
+    //                   name: 'title',
+    //                   type: 'string',
+    //                   title: 'Title'
+    //                 },
+    //                 {
+    //                   name: 'content',
+    //                   type: 'text',
+    //                   title: 'Content'
+    //                 }
+    //               ]
+    //             }
+    //           ]
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // },
   ]
 }
