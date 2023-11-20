@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Qoute_Form from '../category/qoute-form'
+import Product_Gallery from './product-gallery'
 
 function Banner() {
     return (
@@ -13,7 +14,7 @@ function Banner() {
                     <p className='text-lg leading-6 my-5 max-w-[510px]'>
                         Ship your products in the latest trendy and safe mailer boxes customized uniquely to make a good impression of your brand.
                     </p>
-                    <Image src="/images/category-baner.png" alt='category-baner' width={534} height={400} className='mx-auto' />
+                    <Product_Gallery />
                 </div>
                 <div>
                     <Qoute_Form />
