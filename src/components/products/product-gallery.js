@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Image from 'next/image'
+import { urlForImage } from "../../../sanity/lib/image";
 
-const Product_Gallery = () => {
+const Product_Gallery = ({data}) => {
+  console.log("🚀 ~ file: product-gallery.js:6 ~ data:", data)
   const [nav1, setNav1] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0)
   const [slider1, setSlider1] = useState(null);
@@ -32,26 +34,26 @@ const Product_Gallery = () => {
           asNavFor={nav1}
           ref={(slider) => setSlider1(slider)}
         >
-          {AfroStyles.map((item, idx) => (
+          {data?.gallery?.map((item, idx) => (
             <div
               key={item.id}
               className={currentSlide === idx ? "active" : null}
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={item.src} alt={item.alt} width={435} height={365} className='mx-auto' />
+              <Image src={urlForImage(item?.asset._ref).width(534)?.url()} alt={item.alt} width={435} height={365} className='mx-auto' />
             </div>
           ))}
         </Slider>
         <div className="thumb-wrapper">
-          {AfroStyles.map((item, idx) => (
+          {data?.gallery?.map((item, idx) => (
             <div
               key={item.id}
               className={currentSlide === idx ? "active" : null}
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={item.src} alt={item.alt} width={180} height={180} className='' />
+              <Image src={urlForImage(item?.asset._ref).width(534)?.url()} alt={item.alt} width={180} height={180} className='' />
               {currentSlide}
             </div>
           ))}
