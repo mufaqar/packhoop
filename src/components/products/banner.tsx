@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 import Qoute_Form from '../category/qoute-form'
+
+import Product_Gallery from './product-gallery'
+
 import { urlForImage } from '../../../sanity/lib/image'
+
 
 function Banner({data}:any) {
     return (
@@ -14,7 +18,11 @@ function Banner({data}:any) {
                     <p className='text-lg leading-6 my-5 max-w-[510px]'>
                         {data?.excerpt}
                     </p>
+
+                    <Product_Gallery />
+
                     <Image src={urlForImage(data?.image.asset._ref).width(534)?.url()} alt='category-baner' width={534} height={400} className='mx-auto' />
+
                 </div>
                 <div>
                     <Qoute_Form />
