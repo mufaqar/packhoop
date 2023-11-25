@@ -1,18 +1,18 @@
 export const NavLinks = [
     {
         name: "Products",
-        link: "#"
+        link: "/products"
     },
     {
         name: "Box by Material",
-        link: "#"
+        link: "#box-by-material"
     },
     {
         name: "Shapes & Styles",
-        link: "#"
+        link: "#shapes-and-style"
     },
     {
         name: "Contact Us",
-        link: "#"
+        link: "/contact-us"
     },
 ]

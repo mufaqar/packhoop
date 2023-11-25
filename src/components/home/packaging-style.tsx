@@ -5,7 +5,7 @@ import { urlForImage } from '../../../sanity/lib/image'
 function Packaging_Style({ data }: any) {
 
     return (
-        <section className='py-16'>
+        <section id="box-by-material" className='py-16'>
             <div className='container mx-auto px-4'>
                 <div>
                     <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr text-center'>
@@ -22,6 +22,7 @@ function Packaging_Style({ data }: any) {
                                 key={i}
                                 title={category?.name}
                                 content={category?.excerpt}
+                                slug= {category?.slug}
                                 img={urlForImage(category?.image.asset._ref).width(306).url()}
                             />
                         ))

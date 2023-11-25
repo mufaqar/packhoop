@@ -15,7 +15,7 @@ import { urlForImage } from '../../../sanity/lib/image'
 
 export default function Category({categoryRes, productsRes}:any) {
     const {query} = useRouter()
-    const relatedProducts = productsRes.filter((item:any) =>item.categories.slug.current === query.slug)
+    const relatedProducts = productsRes?.filter((item:any) =>item.categories.slug.current === query.slug)
     return (
         <main>
             <Banner data={categoryRes}/>
@@ -49,7 +49,7 @@ export default function Category({categoryRes, productsRes}:any) {
                             <DesignBox
                                 key={i}
                                 title={product.title}
-                                img={urlForImage(product?.image.asset._ref).width(306).url()}
+                                img={urlForImage(product?.image.asset._ref).width(306)?.url()}
                             />
                         ))
                     }

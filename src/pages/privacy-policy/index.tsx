@@ -1,33 +1,13 @@
-import { Inter } from 'next/font/google'
-import MainBanner from '@/components/home/main'
-import Packaging_Style from '@/components/home/packaging-style'
-import HowIt_work from '@/components/home/howit-work'
-import Packing_Design from '@/components/home/packing-design'
-import Why_ChooseUs from '@/components/home/why-choose'
-import Testimonials from '@/components/home/testimonials'
-import Faqs from '@/components/home/faqs'
-import Get_Qoute from '@/components/home/get-qoute'
-import { client } from '../../sanity/lib/client'
-import {Qcategories, Qfaqs, Qproducts, Qtestimonials} from '../../sanity/queries'
+import React from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home({testimonialsRes, faqRes, categoriesRes, productsRes}:any) {
-
+const PrivacyPolicy = () => {
   return (
-    <main className={``} >
-      <MainBanner />
-      <Packaging_Style data={categoriesRes}/>
-      <HowIt_work />
-      <Packing_Design data={productsRes} title="Custom Packaging Boxes" content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques."/>
-      <Why_ChooseUs />
-      <Testimonials data={testimonialsRes}/>
-      <Faqs data={faqRes}/>
-      <section className='py-16'>
+    <section className='container mx-auto px-3'>
+        <section className='py-16'>
         <div className='container mx-auto px-4'>
           <div>
             <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr'>
-              Why Custom Packaging Essential for Your Business
+            Privacy Policy
             </h2>
             <p className='text-lg font-normal text-txt_Clr mt-5'>
               We live in a fast-paced world where advancements in technology have allowed people to make informed decisions and better choices. Today, nearly everyone uses a smartphone or laptop to know about consumer products and all other details that will help them make best buying decision. In the business sector, due to significant competition, there is a clear shift from product-centric to a customer-centric approach. Another reason for the shift is ambitious entrepreneurs and small-businessmen running their own brands to better serve the customers.
@@ -41,22 +21,8 @@ export default function Home({testimonialsRes, faqRes, categoriesRes, productsRe
           </div>
         </div>
       </section>
-      <Get_Qoute />
-    </main>
+    </section>
   )
 }
 
-
-
-export async function getServerSideProps() {
-  const testimonialsRes = await client.fetch(Qtestimonials);
-  const faqRes = await client.fetch(Qfaqs);
-  const categoriesRes = await client.fetch(Qcategories);
-  const productsRes = await client.fetch(Qproducts);
-  return {
-    props: {
-      testimonialsRes, faqRes, categoriesRes, productsRes,
-      preview: true
-    }
-  };
-}
+export default PrivacyPolicy

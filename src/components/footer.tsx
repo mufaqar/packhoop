@@ -48,22 +48,22 @@ function Footer() {
           </h6>
           <ul className='grid gap-2'>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
+              <Link href="/about-us" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
+              <Link href="/contact-us" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
+              <Link href="/terms-and-conditions" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
                 Terms and Conditions
               </Link>
             </li>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
+              <Link href="/privacy-policy" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
                 Privacy Policy
               </Link>
             </li>
