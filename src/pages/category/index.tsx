@@ -8,32 +8,32 @@ import Order_Process from '@/components/category/order-process'
 import Technical_Specs from '@/components/category/technical-specs'
 import DesignBox from '@/components/home/designBox'
 import React from 'react'
-import { client } from '../../../sanity/lib/client'
-import {Qproducts, QSingleCategory} from '../../../sanity/queries'
 import { useRouter } from 'next/router'
 import { urlForImage } from '../../../sanity/lib/image'
 
-export default function Category({categoryRes, productsRes}:any) {
-    const {query} = useRouter()
-    const relatedProducts = productsRes?.filter((item:any) =>item.categories.slug.current === query.slug)
+export default function Category({ categoryRes, productsRes, faqRes }: any) {
+    console.log("🚀 ~ file: index.tsx:17 ~ Category ~ faqRes:", faqRes)
+    const { query } = useRouter()
+    const relatedProducts = productsRes?.filter((item: any) => item.categories?.slug?.current === query.slug)
+
     return (
         <main>
-            <Banner data={categoryRes}/>
-            <Get_Started data={categoryRes}/>
+            <Banner data={categoryRes} />
+            <Get_Started data={categoryRes} />
             <section className='py-16'>
                 <div className='container mx-auto px-4 grid gap-16'>
-                    <ContentBox
-                        img="/images/post1.png"
-                        Cstm_class="lg:flex-row flex-col"
-                    />
-                    <ContentBox
-                        img="/images/post2.png"
-                        Cstm_class="lg:flex-row-reverse flex-col"
-                    />
-                    <ContentBox
-                        img="/images/post1.png"
-                        Cstm_class="lg:flex-row flex-col"
-                    />
+                    {
+                        categoryRes.grid?.map((item: any, idx: number) => (
+                            <ContentBox
+                                img={urlForImage(item?.image.asset._ref).width(306)?.url()}
+                                Cstm_class={` ${idx%2 === 0 ? 'lg:flex-row flex-col' : 'lg:flex-row-reverse flex-col'}`}
+                                key={idx}
+                                title={item.title}
+                                list={item.list}
+                            />
+                        ))
+                    }
+
                 </div>
             </section>
             <section className='py-16'>
@@ -44,37 +44,23 @@ export default function Category({categoryRes, productsRes}:any) {
                         </h2>
                     </div>
                     <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
-                    {
-                        relatedProducts?.map((product: any, i: number) => (
-                            <DesignBox
-                                key={i}
-                                title={product.title}
-                                img={urlForImage(product?.image.asset._ref).width(306)?.url()}
-                            />
-                        ))
-                    }
+                        {
+                            relatedProducts?.map((product: any, i: number) => (
+                                <DesignBox
+                                    key={i}
+                                    slug={product.slug}
+                                    title={product.title}
+                                    img={urlForImage(product?.image.asset._ref).width(306)?.url()}
+                                />
+                            ))
+                        }
                     </div>
                 </div>
             </section>
             <Choose_Us />
-            <Technical_Specs />
-            <Cat_Faqs />
+            <Cat_Faqs faqRes={faqRes}/>
             <Order_Process />
             <Cta />
         </main>
     )
 }
-
-
-
-export async function getServerSideProps(pageContext:any) {
-    const catSlug = pageContext.query.slug;
-    const categoryRes = await client.fetch(QSingleCategory, {catSlug});
-    const productsRes = await client.fetch(Qproducts);
-    return {
-      props: {
-        categoryRes, productsRes,
-        preview: true
-      }
-    };
-  }

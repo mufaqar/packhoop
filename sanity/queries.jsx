@@ -21,4 +21,25 @@ export const Qproducts = `*[ _type == "products"]{
 
 export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]`;
 
-export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug ][0]`;
+export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug ][0]{
+     title,
+     secound_title,
+     _createdAt,
+     image,
+     gallery,
+     slug,
+     excerpt,
+     content,
+     categories[]->{
+          name,
+          slug
+     },
+     grid,
+     mailerbox,
+     orderprocess[]->{
+          title,
+          detail
+     },
+     _createdAt,
+     _updatedAt
+}`;

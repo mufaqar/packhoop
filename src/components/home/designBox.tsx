@@ -4,7 +4,7 @@ import React from 'react'
 
 function DesignBox({ title, img, slug }: any) {
     return (
-        <Link href={`/${slug.current}`}>
+        <Link href={`/${slug?.current}`}>
             <div className=''>
                 <Image src={img} alt='pack/1' width={306} height={340} className='mx-auto cursor-pointer mb-4' />
             </div>

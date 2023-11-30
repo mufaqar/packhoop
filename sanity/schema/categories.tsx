@@ -74,52 +74,71 @@ export const categories = {
         },
       ]
     },
+    {
+      title: 'Grid',
+      name: 'grid',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              title: 'Image',
+              name: 'image',
+              type: 'image',
+              options: {
+                hotspot: true
+              }
+            },
+            {
+              name: 'title',
+              type: 'string',
+              title: 'Title'
+            },
+            {
+              title: 'List',
+              name: 'list',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  fields: [
+                    {
+                      name: 'title',
+                      type: 'string',
+                      title: 'Title'
+                    },
+                    {
+                      name: 'content',
+                      type: 'text',
+                      title: 'Content'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     // {
-    //   title: 'Grid',
-    //   name: 'grid',
+    //   title: 'Faqs',
+    //   name: 'faqs',
     //   type: 'array',
     //   of: [
     //     {
-    //       type: 'object',
-    //       fields: [
-    //         {
-    //           title: 'Image',
-    //           name: 'image',
-    //           type: 'image',
-    //           options: {
-    //             hotspot: true
-    //           }
-    //         },
-    //         {
-    //           name: 'title',
-    //           type: 'string',
-    //           title: 'Title'
-    //         },
-    //         {
-    //           title: 'List',
-    //           name: 'list',
-    //           type: 'array',
-    //           of: [
-    //             {
-    //               type: 'object',
-    //               fields: [
-    //                 {
-    //                   name: 'title',
-    //                   type: 'string',
-    //                   title: 'Title'
-    //                 },
-    //                 {
-    //                   name: 'content',
-    //                   type: 'text',
-    //                   title: 'Content'
-    //                 }
-    //               ]
-    //             }
-    //           ]
-    //         }
+    //       type: 'reference',
+    //       to: [
+    //         {type: 'faqs'},
     //       ]
     //     }
     //   ]
     // },
+    {
+      name: 'orderprocess',
+      title: 'Order Process',
+      type: 'reference',
+      to: [{ type: 'orderprocess' }]
+    },
   ]
 }
