@@ -10,13 +10,25 @@ import DesignBox from '@/components/home/designBox'
 import React from 'react'
 import { useRouter } from 'next/router'
 import { urlForImage } from '../../../sanity/lib/image'
+import Head from 'next/head'
 
 export default function Category({ categoryRes, productsRes, faqRes }: any) {
-    console.log("🚀 ~ file: index.tsx:17 ~ Category ~ faqRes:", faqRes)
     const { query } = useRouter()
     const relatedProducts = productsRes?.filter((item: any) => item.categories?.slug?.current === query.slug)
 
     return (
+        <>
+        <Head>
+            <title>{categoryRes?.metatitle}</title>
+            <meta name='keywords' content={categoryRes?.metatags}/>
+            <meta name='description' content={categoryRes?.metadescription}/>
+            <meta name='subject' content="products" />
+            <meta name='copyright' content='packhoop'/>
+            <meta name='language' content='En'/>
+            <meta name='robots' content='index,follow'/>
+            <meta name='subtitle' content={categoryRes?.metadescription}/>
+            <meta name='target' content={categoryRes?.metatitle}/>
+        </Head>
         <main>
             <Banner data={categoryRes} />
             <Get_Started data={categoryRes} />
@@ -62,5 +74,6 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
             <Order_Process />
             <Cta />
         </main>
+        </>
     )
 }

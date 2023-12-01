@@ -41,5 +41,8 @@ export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug
           detail
      },
      _createdAt,
-     _updatedAt
+     _updatedAt,
+     metatitle,
+     metadescription,
+     metatags
 }`;

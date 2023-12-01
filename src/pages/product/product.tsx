@@ -9,10 +9,23 @@ import Banner from '@/components/products/banner'
 import Qoute_Sec from '@/components/products/qoute-sec'
 import React from 'react'
 import { urlForImage } from '../../../sanity/lib/image'
+import Head from 'next/head'
 
 
 export default function Product({productRes, faqRes}:any) {
     return (
+        <>
+        <Head>
+            <title>{productRes?.metatitle}</title>
+            <meta name='keywords' content={productRes?.metatags}/>
+            <meta name='description' content={productRes?.metadescription}/>
+            <meta name='subject' content="products" />
+            <meta name='copyright' content='packhoop'/>
+            <meta name='language' content='En'/>
+            <meta name='robots' content='index,follow'/>
+            <meta name='subtitle' content={productRes?.metadescription}/>
+            <meta name='target' content={productRes?.metatitle}/>
+        </Head>
         <main>
             <Banner data={productRes}/>
             <Get_Started data={productRes}/>
@@ -38,6 +51,7 @@ export default function Product({productRes, faqRes}:any) {
             <Order_Process data={productRes?.orderprocess}/>
             <Cta />
         </main>
+        </>
     )
 }
 

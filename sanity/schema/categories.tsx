@@ -9,6 +9,22 @@ export const categories = {
       title: 'Name'
     },
     {
+      name: 'metatitle',
+      type: 'string',
+      title: 'Meta Title'
+    },
+    {
+      name: 'metadescription',
+      type: 'text',
+      title: 'Meta Description'
+    },
+    {
+      name: 'metatags',
+      type: 'text',
+      description: "Please seprate tag with ','",
+      title: 'Meta Tags'
+    },
+    {
       title: 'Slug',
       name: 'slug',
       type: 'slug',
