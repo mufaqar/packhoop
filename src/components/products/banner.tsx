@@ -21,7 +21,7 @@ function Banner({data}:any) {
 
                     <Product_Gallery data={data}/>
 
-                    <Image src={urlForImage(data?.image?.asset?._ref).width(534)?.url()} alt='category-baner' width={534} height={400} className='mx-auto' />
+                    {/* <Image src={urlForImage(data?.image?.asset?._ref).width(534)?.url()} alt='category-baner' width={534} height={400} className='mx-auto' /> */}
 
                 </div>
                 <div>
