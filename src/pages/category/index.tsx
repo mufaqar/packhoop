@@ -34,7 +34,7 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
             <Get_Started data={categoryRes} />
             <section className='py-16'>
                 <div className='container mx-auto px-4 grid gap-16'>
-                    {/* {
+                    {
                         categoryRes?.grid?.map((item: any, idx: number) => (
                             <ContentBox
                                 img={urlForImage(item?.image?.asset._ref).width(306)?.url()}
@@ -44,7 +44,7 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
                                 list={item.list}
                             />
                         ))
-                    } */}
+                    }
 
                 </div>
             </section>
