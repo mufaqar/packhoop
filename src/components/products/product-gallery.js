@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { urlForImage } from "../../../sanity/lib/image";
 
 const Product_Gallery = ({data}) => {
-  console.log("🚀 ~ file: product-gallery.js:6 ~ data:", data)
+
   const [nav1, setNav1] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0)
   const [slider1, setSlider1] = useState(null);

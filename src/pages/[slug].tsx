@@ -16,8 +16,6 @@ const Slug = ({ productRes, categoryRes, productsRes, faqRes }: any) => {
 
 export default Slug
 
-
-
 export async function getServerSideProps(pageContext: any) {
      const slug = pageContext.query.slug;
 
