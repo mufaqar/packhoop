@@ -13,6 +13,7 @@ import Head from 'next/head'
 
 
 export default function Product({productRes, faqRes}:any) {
+    console.log("🚀 ~ file: product.tsx:16 ~ Product ~ productRes:", productRes)
     return (
         <>
         <Head>
