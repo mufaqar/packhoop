@@ -15,13 +15,13 @@ function Technical_Specs({ mailerbox }: any) {
                 </div>
                 <div className='divide-y'>
                     {
-                        mailerbox.map((item: any, idx: number) => {
+                        mailerbox?.map((item: any, idx: number) => {
                             return (
                                 <>
                                     <div className='flex lg:flex-row flex-col gap-7 items-center py-7' key={idx}>
 
                                         {
-                                            item?.list.map((d: any, i: number) => (
+                                            item?.list?.map((d: any, i: number) => (
                                                 <div className='lg:w-1/3 w-full' key={i}>
                                                     {
                                                         i === 0 ? <h3 className='md:text-3xl text-2xl font-medium text-title_Clr mb-3'>
