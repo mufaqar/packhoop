@@ -41,7 +41,7 @@ const Product_Gallery = ({data}) => {
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={urlForImage(item?.asset._ref).width(534)?.url()} alt={item.alt} width={435} height={365} className='mx-auto' />
+              <Image src={urlForImage(item?.asset?._ref).width(534)?.url()} alt={item.alt} width={435} height={365} className='mx-auto' />
             </div>
           ))}
         </Slider>
@@ -53,7 +53,7 @@ const Product_Gallery = ({data}) => {
               onClick={() => {
                 slider1?.slickGoTo(idx)
               }}>
-              <Image src={urlForImage(item?.asset._ref).width(534)?.url()} alt={item.alt} width={180} height={180} className='' />
+              <Image src={urlForImage(item?.asset?._ref).width(534)?.url()} alt={item.alt} width={180} height={180} className='' />
               {currentSlide}
             </div>
           ))}

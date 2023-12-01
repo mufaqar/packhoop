@@ -32,9 +32,9 @@ export default function Product({productRes, faqRes}:any) {
             <section className='py-16'>
                 <div className='container mx-auto px-4 grid gap-16'>
                     {
-                        productRes.grid?.map((item: any, idx: number) => (
+                        productRes?.grid?.map((item: any, idx: number) => (
                             <ContentBox
-                                img={urlForImage(item?.image.asset._ref).width(306)?.url()}
+                                img={urlForImage(item?.image?.asset?._ref).width(306)?.url()}
                                 Cstm_class={` ${idx%2 === 0 ? 'lg:flex-row flex-col' : 'lg:flex-row-reverse flex-col'}`}
                                 key={idx}
                                 title={item.title}

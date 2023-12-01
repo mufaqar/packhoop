@@ -37,7 +37,7 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
                     {
                         categoryRes?.grid?.map((item: any, idx: number) => (
                             <ContentBox
-                                img={urlForImage(item?.image?.asset._ref).width(306)?.url()}
+                                img={urlForImage(item?.image?.asset?._ref).width(306)?.url()}
                                 Cstm_class={` ${idx%2 === 0 ? 'lg:flex-row flex-col' : 'lg:flex-row-reverse flex-col'}`}
                                 key={idx}
                                 title={item.title}
@@ -62,7 +62,7 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
                                     key={i}
                                     slug={product.slug}
                                     title={product.title}
-                                    img={urlForImage(product?.image.asset._ref).width(306)?.url()}
+                                    img={urlForImage(product?.image?.asset?._ref).width(306)?.url()}
                                 />
                             ))
                         }
