@@ -9,9 +9,7 @@ import Faqs from '@/components/home/faqs'
 import Get_Qoute from '@/components/home/get-qoute'
 import { client } from '../../sanity/lib/client'
 import {Qcategories, Qfaqs, Qproducts, Qtestimonials} from '../../sanity/queries'
-
 const inter = Inter({ subsets: ['latin'] })
-
 export default function Home({testimonialsRes, faqRes, categoriesRes, productsRes}:any) {
 
   return (
