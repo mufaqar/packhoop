@@ -4,7 +4,7 @@ import { urlForImage } from '../../../sanity/lib/image'
 
 function Packing_Design({ data, title, content }: any) {
     return (
-        <section className='py-16' id="shapes-and-style">
+        <section id="shapes-and-style">
             <div className='container mx-auto px-4'>
                 <div>
                     <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr text-center'>
@@ -14,7 +14,7 @@ function Packing_Design({ data, title, content }: any) {
                         {content}
                     </p>
                 </div>
-                <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-16'>
+                {/* <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-16'>
                     {
                         data.map((product: any, i: number) => (
                             <DesignBox
@@ -25,7 +25,7 @@ function Packing_Design({ data, title, content }: any) {
                             />
                         ))
                     }
-                </div>
+                </div> */}
             </div>
         </section>
     )
