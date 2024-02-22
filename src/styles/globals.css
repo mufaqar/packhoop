@@ -38,10 +38,10 @@
   src: url('../../public/fonts/SourceSansPro-Regular.ttf');
 }
 
-h1,h2,h3,h4,h5,h6,p,li{
+h1,h2,h3,h4,h5,h6,p,li,span{
   font-family: 'EffraMedium';
 }
-span,a{
+a{
   font-family: 'SourceSansProRegular';
 }
 body,
