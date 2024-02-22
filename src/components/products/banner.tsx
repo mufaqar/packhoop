@@ -12,10 +12,10 @@ function Banner({data}:any) {
         <section className='h-full pt-10'>
             <div className='container mx-auto px-4 grid lg:grid-cols-2 grid-cols-1 gap-7'>
                 <div>
-                    <h1 className='md:text-5xl -mt-4 text-3xl font-semibold text-title_Clr'>
+                    <h1 className='md:text-4xl text-3xl font-semibold text-title_Clr'>
                         {data?.title}
                     </h1>
-                    <p className='text-lg leading-6 my-5 max-w-[510px]'>
+                    <p className='text-lg leading-6 my-5'>
                         {data?.excerpt}
                     </p>
 

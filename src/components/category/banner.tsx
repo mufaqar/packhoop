@@ -8,13 +8,13 @@ function Banner({data}:any) {
         <section className='h-full pt-10'>
             <div className='container mx-auto px-4 grid lg:grid-cols-2 grid-cols-1 gap-7'>
                 <div>
-                    <h1 className='md:text-5xl -mt-4 text-3xl font-semibold text-title_Clr'>
+                    <h1 className='md:text-4xl text-3xl font-semibold text-title_Clr'>
                         {data?.name}
                     </h1>
-                    <p className='text-lg leading-6 my-5 max-w-[510px]'>
+                    <p className='text-lg leading-6 my-5 '>
                         {data?.excerpt}
                     </p>
-                    <Image src={urlForImage(data?.image?.asset?._ref).width(534)?.url()} alt={data?.image?.alt || data?.name} width={534} height={400} className='mx-auto' />
+                    <Image src={urlForImage(data?.image?.asset?._ref).width(534)?.url()} alt={data?.image?.alt || data?.name} width={534} height={400} className='w-full h-[450px] object-contain bg-[#F7F7F7]' />
                 </div>
                 <div>
                     <Qoute_Form />

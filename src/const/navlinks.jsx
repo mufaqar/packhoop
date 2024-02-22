@@ -4,6 +4,10 @@ export const NavLinks = [
         link: "/products"
     },
     {
+        name: "Industries",
+        link: "#"
+    },
+    {
         name: "Box by Material",
         link: "#box-by-material"
     },

@@ -138,7 +138,6 @@ function Footer() {
           © 2023 logo. All Rights Reserved
         </p>
       </div>
-      <Image src="/images/footer-bg.png" alt='footer-bg' width={272} height={176} className='absolute bottom-0 right-0' />
     </footer>
   )
 }
