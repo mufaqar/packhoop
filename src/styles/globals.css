@@ -114,3 +114,14 @@ html {
 .max_content ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+.content .slick-next {
+  right: 25px;
+  z-index: 2;
+}
+.content .slick-prev {
+  left: 25px;
+  z-index: 2;
+}
+.content .slick-prev:before, .content .slick-next:before{
+  color: #000;
+}

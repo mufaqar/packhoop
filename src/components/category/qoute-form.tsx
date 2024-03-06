@@ -38,7 +38,7 @@ function Qoute_Form() {
       }
       
     return (
-        <div className='shadow-[0_4px_86px_0_rgba(0,0,0,0.15)]'>
+        <div className='shadow-[0_4px_15px_0_rgba(0,0,0,0.15)]'>
             <h2 className='text-2xl font-semibold text-white px-8 py-3.5 bg-secondary'>
                 Get A Quote
             </h2>
