@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-const MegaMenu = () => {
+const MegaMenu = ({ setMegaMenu }: any) => {
     return (
         <div className='container mx-auto bg-white md:shadow-[0_7px_10px_-2px_rgba(0,0,0,0.25)] md:px-7 pt-4'>
             <div className='md:hidden flex flex-col gap-5'>
@@ -19,20 +19,28 @@ const MegaMenu = () => {
                     <h3 className='text-base font-bold text-title_Clr'>
                         Shop by Industries
                     </h3>
-                    <div className='grid grid-cols-3 gap-5 mt-6 grid-flow-row'>
-                        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]?.map((item: any, idx: number) => {
+                    <ul className='grid grid-cols-3 gap-5 mt-6 grid-flow-row'>
+                        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]?.map((item: any, idx: number) => {
                             return (
-                                <div key={idx} className='bg-transparent hover:bg-[#F7F7F7] py-4 px-2 rounded-md w-full'>
+                                <li onClick={() => setMegaMenu(false)} key={idx} className='bg-transparent hover:bg-[#F7F7F7] py-4 px-2 rounded-md w-full'>
                                     <Link href={`${item?.link}`} className='text-base font-medium text-title_Clr flex items-center gap-4'>
                                         <div>
                                             <Image src="/images/delivery.png" alt="delivery" width={40} height={40} />
                                         </div>
                                         <span> {item?.name} Apparel</span>
                                     </Link>
-                                </div>
+                                </li>
                             );
                         })}
-                    </div>
+                        <li onClick={() => setMegaMenu(false)} className='bg-transparent hover:bg-[#F7F7F7] py-4 px-2 rounded-md w-full'>
+                            <Link href={`/categories`} className='text-base font-medium text-title_Clr flex items-center gap-4'>
+                                <div>
+                                    <Image src="/images/delivery.png" alt="delivery" width={40} height={40} />
+                                </div>
+                                <span>See all industries</span>
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
                 <div>
                     <Image src="/images/design/1.png" alt='feature' width={306} height={338} className='w-full' />

@@ -71,6 +71,15 @@ function Get_Qoute() {
                                 </div>
                             </div>
                             <div className="w-full">
+                                <label htmlFor='detail' className="text-sm font-medium leading-none hidden">Your Description</label>
+                                <textarea
+                                    className="text-sm font-medium text-txt_Clr bg-white px-4 py-3 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                                    id='detail'
+                                    rows={5}
+                                    placeholder="Write your description"></textarea>
+                                {/* {errors.detail && <span className='text-xs text-red-500'>This field is required</span>} */}
+                            </div>
+                            <div className="w-full">
                                 <button type='submit' className="text-base font-semibold text-white bg-primary hover:bg-secondary px-4 py-3 rounded-[5px] w-full">
                                     SUBMIT
                                 </button>

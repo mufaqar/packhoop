@@ -38,12 +38,22 @@
   src: url('../../public/fonts/SourceSansPro-Regular.ttf');
 }
 
-h1,h2,h3,h4,h5,h6,p,li,span{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span {
   font-family: 'EffraMedium';
 }
-a{
+
+a {
   font-family: 'SourceSansProRegular';
 }
+
 body,
 * {
   box-sizing: border-box;
@@ -58,27 +68,49 @@ html {
 .thumb-wrapper {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  gap: 20px;
+  justify-content: center;
 }
 
 .thumb-wrapper>div {
   width: 100%;
   overflow: hidden;
   transition: all .1s;
-  padding: 5px;
   object-position: center;
   max-width: 160px;
   max-height: 100px;
+  border-radius: 6px;
 }
 
 .thumb-wrapper>div.active {
-  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+  border: 3px solid #ff4c00;
+  border-radius: 6px;
 }
 
 .thumb-wrapper>div img {
-  margin: 5px;
   width: 100%;
   height: 100%;
   object-position: center;
-  object-fit: contain;
+  object-fit: cover;
+}
+/* width */
+.max_content ::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+.max_content ::-webkit-scrollbar-track {
+  background-color: #f1f1f1; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.max_content ::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.max_content ::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

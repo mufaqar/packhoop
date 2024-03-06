@@ -39,7 +39,7 @@ const ContactUs = () => {
   }
   return (
     <>
-      <PageBanner title="Contact Us"
+      <PageBanner title="Get A Qoute"
         content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques." />
       <section className='py-16'>
         <div className='container mx-auto px-4 grid md:grid-cols-2 grid-cols-1 md:gap-10 gap-7'>
