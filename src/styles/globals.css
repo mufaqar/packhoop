@@ -45,12 +45,11 @@ h4,
 h5,
 h6,
 p,
-li,
-span {
+li{
   font-family: 'EffraMedium';
 }
 
-a {
+a,span {
   font-family: 'SourceSansProRegular';
 }
 
