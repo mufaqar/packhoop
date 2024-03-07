@@ -14,11 +14,11 @@ function Header() {
   const [openSearch, setOpenSearch] = useState(false)
   const [megaMenu, setMegaMenu] = useState(false)
 
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
-    function handleClickOutside(event:any) {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    function handleClickOutside(event: any) {
+      if (menuRef.current && !menuRef.current.contains(event.target as HTMLLIElement)) {
         setMegaMenu(false);
       }
     }
