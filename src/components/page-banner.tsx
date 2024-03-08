@@ -8,9 +8,9 @@ const PageBanner = ({ title, content }: any) => {
                     <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr text-center'>
                         {title}
                     </h2>
-                    <p className='text-lg font-normal text-txt_Clr text-center max-w-[800px] mx-auto mt-5'>
+                    { content && <p className='text-lg font-normal text-txt_Clr text-center max-w-[800px] mx-auto mt-5'>
                         {content}
-                    </p>
+                    </p>}
                 </div>
             </div>
         </section>

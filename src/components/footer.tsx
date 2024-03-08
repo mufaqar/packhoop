@@ -123,7 +123,7 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
+              <Link href="/blogs" className='md:text-lg text-base font-normal text-txt_Clr hover:text-secondary'>
                 Blog
               </Link>
             </li>
