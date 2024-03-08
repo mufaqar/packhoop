@@ -45,11 +45,12 @@ h4,
 h5,
 h6,
 p,
-li{
+li {
   font-family: 'EffraMedium';
 }
 
-a,span {
+a,
+span {
   font-family: 'SourceSansProRegular';
 }
 
@@ -92,6 +93,7 @@ html {
   object-position: center;
   object-fit: cover;
 }
+
 /* width */
 .max_content ::-webkit-scrollbar {
   width: 6px;
@@ -99,28 +101,36 @@ html {
 
 /* Track */
 .max_content ::-webkit-scrollbar-track {
-  background-color: #f1f1f1; 
+  background-color: #f1f1f1;
   border-radius: 10px;
 }
- 
+
 /* Handle */
 .max_content ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 .max_content ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
+
 .content .slick-next {
   right: 25px;
   z-index: 2;
 }
+
 .content .slick-prev {
   left: 25px;
   z-index: 2;
 }
-.content .slick-prev:before, .content .slick-next:before{
+
+.content .slick-prev:before,
+.content .slick-next:before {
   color: #000;
+}
+
+.grad_Bg {
+  background-image: linear-gradient(to bottom, #2B4FB9 50%, white 50%);
 }

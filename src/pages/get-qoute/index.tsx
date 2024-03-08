@@ -1,11 +1,7 @@
-import PageBanner from '@/components/page-banner';
-import Image from 'next/image'
-import Link from 'next/link';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaPinterestP, FaRegCalendar, FaRegEnvelope, FaTwitter } from "react-icons/fa";
 
-const ContactUs = () => {
+const GetAQoute = () => {
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -20,7 +16,7 @@ const ContactUs = () => {
     setLoading(true);
     SendMail()
     function SendMail() {
-      fetch('/api/contact', {
+      fetch('/api/get-qoute', {
         method: 'POST',
         headers: {
           Accept: 'application/json, text/plain, */*',
@@ -39,162 +35,166 @@ const ContactUs = () => {
   }
   return (
     <>
-      <PageBanner title="Get A Qoute"
-        content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques." />
-      <section className='py-16'>
-        <div className='container mx-auto px-4 grid md:grid-cols-2 grid-cols-1 md:gap-10 gap-7'>
-          <div>
-            <h2 className='md:text-2xl text-2xl font-semibold text-title_Clr'>
-              Let's Connect
-            </h2>
-            <p className='text-lg font-normal text-txt_Clr max-w-[700px] mt-2'>
-              Don’t hesitate to contact us on also during the non-working hours / weekend on whatsapp. You will still get an answer in about 30 minutes.
-            </p>
-            <div>
-              <form className="grid w-full gap-5 items-center bg-white drop-shadow-xl rounded-lg px-8 py-10 mt-8" onSubmit={handleSubmit(onSubmit)}>
-                <div className='flex md:flex-row flex-col md:gap-5 gap-5'>
-                  <div className="w-full">
-                    <label htmlFor='fname' className="text-sm font-medium leading-none hidden">First Name</label>
-                    <input
-                      className="text-sm font-medium text-txt_Clr bg-white px-4 py-3 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
-                      type="text"
-                      {...register('fname', { required: true })}
-                      id='fname'
-                      placeholder="First Name" />
-                    {/* {errors.fname && <span className='text-xs text-red-500'>This field is required</span>} */}
-                  </div>
-                  <div className="w-full">
-                    <label htmlFor='lname' className="text-sm font-medium leading-none hidden">Last Name</label>
-                    <input
-                      className="text-sm font-medium text-txt_Clr bg-white px-4 py-3 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
-                      type="text"
-                      {...register('lname', { required: true })}
-                      id='lname'
-                      placeholder="Last Name" />
-                    {/* {errors.lname && <span className='text-xs text-red-500'>This field is required</span>} */}
-                  </div>
-                </div>
-                <div className='flex md:flex-row flex-col md:gap-5 gap-5'>
-                  <div className="w-full">
-                    <label htmlFor='email' className="text-sm font-medium leading-none hidden">Email  Address</label>
-                    <input
-                      className="text-sm font-medium text-txt_Clr bg-white px-4 py-3 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
-                      type="email"
-                      {...register('email', { required: true })}
-                      id='email'
-                      placeholder="Email  Address" />
-                    {/* {errors.email && <span className='text-xs text-red-500'>This field is required</span>} */}
-                  </div>
-                  <div className="w-full">
-                    <label htmlFor='subject' className="text-sm font-medium leading-none hidden">Subject</label>
-                    <input
-                      className="text-sm font-medium text-txt_Clr bg-white px-4 py-3 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
-                      type="text"
-                      {...register('subject', { required: true })}
-                      id='subject'
-                      placeholder="Subject" />
-                    {/* {errors.subject && <span className='text-xs text-red-500'>This field is required</span>} */}
-                  </div>
-                </div>
-                <div className="w-full">
-                  <label htmlFor='message' className="text-sm font-medium leading-none hidden">Your Message</label>
-                  <textarea
-                    className="text-sm font-medium text-txt_Clr bg-white px-4 py-3 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
-                    id='message'
-                    {...register('message', { required: true })}
-                    rows={5}
-                    placeholder="Write your message"></textarea>
-                  {/* {errors.message && <span className='text-xs text-red-500'>This field is required</span>} */}
-                </div>
-                <div className="w-full">
-                  <button type='submit' className="text-sm font-semibold text-white bg-primary hover:bg-secondary px-4 py-3 rounded-md w-full">
-                    {loading ? 'SENDING...' : 'Get Inquiry'}
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div>
-            <Image src="/images/contact-img.jpg" alt='img' width={612} height={408} className='rounded-lg h-full w-full object-cover' />
-          </div>
+      <section className='pt-16 bg-primary'>
+        <div className='container mx-auto px-4'>
+          <h2 className='md:text-4xl text-3xl font-semibold text-white text-center'>
+            Request a Quote
+          </h2>
+          <p className='text-lg font-normal text-white text-center max-w-[800px] mx-auto mt-5'>
+            Fill the form below and we reply with a custom quote for your needs.
+          </p>
         </div>
       </section>
-      <section className='py-16'>
-        <div className='container mx-auto px-4'>
-          <div className='py-4 sm:py-8 w-full bg-right sm:bg-left lg:bg-center bg-cover rounded-lg flex justify-end px-4 sm:px-10 bg-[url("/images/contact-bg.jpg")]'>
-            <div className='w-full sm:w-1/2 py-4'>
-              <h2 className='md:text-3xl text-2xl font-semibold text-title_Clr'>
-                Live Support
-              </h2>
-              <p className='text-lg font-normal text-txt_Clr max-w-[700px] mt-3'>
-                Looking for a packaging whizz for your business needs? Let’s have a talk!
-              </p>
-              <h5 className='md:text-lg text-lg font-semibold text-title_Clr mt-8'>
-                Toll-free Call Center
-              </h5>
-              <ul className='mt-6 flex flex-col gap-y-3'>
-                <li>
-                  <Link href="tel:+1(321)1235678" className='text-lg font-normal flex items-center gap-x-3 sm:gap-x-5 text-txt_Clr hover:text-primary'>
-                    <span><FaPhoneAlt /> </span> +1 (321) 123 5678
-                  </Link>
-                </li>
-                <li>
-                  <Link href="tel:+1(321)1235678" className='text-lg font-normal flex items-center gap-x-3 sm:gap-x-5 text-txt_Clr hover:text-primary'>
-                    <span><FaPhoneAlt /> </span> +1 (321) 123 5678
-                  </Link>
-                </li>
-                <li>
-                  <Link href="mailto:info@elitecustomboxes.com" className='text-lg font-normal flex items-center gap-x-3 sm:gap-x-5 text-txt_Clr hover:text-primary'>
-                    <span><FaRegEnvelope /> </span> info@elitecustomboxes.com
-                  </Link>
-                </li>
-                <li>
-                  <span className='text-lg font-normal flex items-center gap-x-3 sm:gap-x-5 text-txt_Clr'>
-                    <span><FaRegCalendar /> </span> 24/7
-                  </span>
-                </li>
-                <li>
-                  <span className='text-lg font-normal flex items-center gap-x-3 sm:gap-x-5 text-txt_Clr'>
-                    <span><FaMapMarkerAlt /> </span> 520 N Veterans Pkwy Addison, IL 60101 United States
-                  </span>
-                </li>
-              </ul>
-              <h5 className='md:text-lg text-lg font-semibold text-title_Clr mt-8'>
-                Follow Us:
-              </h5>
-              <ul className='flex md:gap-6 gap-2 mt-5'>
-                <li>
-                  <Link href="#" className='text-xl hover:scale-125 inline-block hover:text-secondary text-primary'>
-                    <FaLinkedinIn />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className='text-xl hover:scale-125 inline-block hover:text-secondary text-primary'>
-                    <FaFacebookF />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className='text-xl hover:scale-125 inline-block hover:text-secondary text-primary'>
-                    <FaInstagram />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className='text-xl hover:scale-125 inline-block hover:text-secondary text-primary'>
-                    <FaTwitter />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className='text-xl hover:scale-125 inline-block hover:text-secondary text-primary'>
-                    <FaPinterestP />
-                  </Link>
-                </li>
-              </ul>
+      <section className='py-16 grad_Bg'>
+        <div className='container mx-auto max-w-[898px] px-4'>
+          <form className="flex flex-col w-full gap-8 bg-white shadow-[0px_4px_10px_0px_rgb(0,0,0,0.1)] rounded-lg md:px-16 px-8 md:py-14 py-10 mt-8" onSubmit={handleSubmit(onSubmit)}>
+            <div className='flex md:flex-row flex-col md:gap-8 gap-5'>
+              <div className="w-full">
+                <label htmlFor='name' className="text-lg font-normal leading-normal">Enter your Name</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="text"
+                  {...register('name', { required: true })}
+                  id='name'
+                  placeholder="Enter your Name" />
+                {/* {errors.name && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+              <div className="w-full">
+                <label htmlFor='email' className="text-lg font-normal leading-normal">Email</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="email"
+                  {...register('email', { required: true })}
+                  id='email'
+                  placeholder="Email" />
+                {/* {errors.email && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
             </div>
-          </div>
+            <div className='flex md:flex-row flex-col md:gap-8 gap-5'>
+              <div className="w-full">
+                <label htmlFor='pname' className="text-lg font-normal leading-normal">Product Name</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="text"
+                  {...register('pname', { required: true })}
+                  id='pname'
+                  placeholder="Product Name" />
+                {/* {errors.pname && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+              <div className="w-full">
+                <label htmlFor='pcode' className="text-lg font-normal leading-normal">Select Code</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="text"
+                  {...register('pcode', { required: true })}
+                  id='pcode'
+                  placeholder="Select Code" />
+                {/* {errors.pcode && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+            </div>
+            <div className='flex md:flex-row flex-col md:gap-8 gap-5'>
+              <div className="w-full">
+                <label htmlFor='quantity' className="text-lg font-normal leading-normal">Quantity</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="number"
+                  {...register('quantity', { required: true })}
+                  id='quantity'
+                  placeholder="Quantity" />
+                {/* {errors.quantity && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+              <div className="w-full">
+                <label htmlFor='phone' className="text-lg font-normal leading-normal">Phone Number</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="tel"
+                  {...register('phone', { required: true })}
+                  id='phone'
+                  placeholder="Phone Number" />
+                {/* {errors.phone && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+            </div>
+            <div className='flex md:flex-row flex-col md:gap-8 gap-5'>
+              <div className="w-full">
+                <label htmlFor='width' className="text-lg font-medium leading-normal hidden">Width</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="number"
+                  {...register('width', { required: true })}
+                  id='width'
+                  placeholder="Width" />
+                {/* {errors.width && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+              <div className="w-full">
+                <label htmlFor='depth' className="text-lg font-medium leading-normal hidden">Depth</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="number"
+                  {...register('depth', { required: true })}
+                  id='depth'
+                  placeholder="Depth" />
+                {/* {errors.depth && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+              <div className="w-full">
+                <label htmlFor='length' className="text-lg font-medium leading-normal hidden">Length</label>
+                <input
+                  className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                  type="number"
+                  {...register('length', { required: true })}
+                  id='length'
+                  placeholder="Length" />
+                {/* {errors.length && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+              <div className='w-full flex flex-col gap-1'>
+                <label htmlFor='dimension' className="text-lg font-medium leading-normal hidden"> Dimension</label>
+                <select id='dimension'
+                  {...register("dimension", { required: true })}
+                  className='text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full'>
+                  <option>Inch</option>
+                  <option>CM</option>
+                  <option>MM</option>
+                </select>
+                {/* {errors.dimension && <span className='text-xs text-red-500'>This field is required</span>} */}
+              </div>
+            </div>
+            <div className="w-full">
+              <label htmlFor="file_input" className="text-lg font-normal leading-normal">Attach Your Design:</label>
+              <input
+                type="file"
+                {...register('file_input', { required: true })}
+                id="file_input"
+                className="text-sm font-medium text-txt_Clr block w-full border border-[#CACACA] rounded-md focus:border-secondary disabled:opacity-50 disabled:pointer-events-none file:bg-gray-100 file:border-0 file:me-4 file:py-3 file:px-4" />
+              {/* {errors.file_input && <span className='text-xs text-red-500'>This field is required</span>} */}
+            </div>
+            <div className="w-full">
+              <label htmlFor='message' className="text-lg font-medium leading-normal hidden">Your Message</label>
+              <textarea
+                className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary  outline-none rounded-md w-full"
+                id='message'
+                {...register('message', { required: true })}
+                rows={5}
+                placeholder="Enter your Meassage"></textarea>
+              {/* {errors.message && <span className='text-xs text-red-500'>This field is required</span>} */}
+            </div>
+            <div className="w-full flex md:flex-row flex-row gap-5 items-center">
+              <label htmlFor='captcha' className="text-lg font-medium leading-normal">4 + 7 =</label>
+              <input
+                className="text-lg font-normal text-txt_Clr bg-white px-4 py-2 mt-2 border border-[#CACACA] focus:border-secondary outline-none rounded-0 w-[64px]"
+                id='captcha'
+                placeholder="" />
+              <span className="text-lg font-medium leading-normal">Please verify.</span>
+              {/* {errors.captcha && <span className='text-xs text-red-500'>This field is required</span>} */}
+            </div>
+            <div className="w-full">
+              <button type='submit' className="text-sm font-semibold text-white bg-primary hover:bg-secondary px-4 py-3 rounded-md w-full">
+                {loading ? 'SENDING...' : 'Get Inquiry'}
+              </button>
+            </div>
+          </form>
         </div>
       </section>
     </>
   )
 }
 
-export default ContactUs
+export default GetAQoute
