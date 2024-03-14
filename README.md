@@ -2,7 +2,7 @@
 
 https://packhoop.vercel.app
 
-#Sanity integrations
+<!-- #Sanity integrations
 
 # Product and Category Page
 
@@ -39,4 +39,10 @@ FAQS
  headig top margin
  
  Thank you page
+ -->
+git remote add origin https://github.com/khsubhani/packhoop.git
 
+https://github.com/mufaqar/packhoop.git 
+
+
+git remote set-url origin https://github.com/khsubhani/packhoop.git
