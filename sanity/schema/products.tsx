@@ -115,7 +115,6 @@ export const products = {
         },
       ]
     },
-    
     {
       name: 'categories',
       title: 'Categories',

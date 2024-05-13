@@ -13,8 +13,6 @@ import { urlForImage } from '../../../sanity/lib/image'
 import Head from 'next/head'
 
 export default function Category({ categoryRes, productsRes, faqRes }: any) {
-    const { query } = useRouter()
-    const relatedProducts = productsRes?.filter((item: any) => item.categories?.slug?.current === query.slug)
 
     return (
         <>
@@ -41,7 +39,7 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
                         </div>
                         <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
                             {
-                                relatedProducts?.map((product: any, i: number) => (
+                                productsRes?.map((product: any, i: number) => (
                                     <DesignBox
                                         key={i}
                                         slug={product.slug}
@@ -54,6 +52,7 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
                     </div>
                 </section>
                 <section className='py-16'>
+                    
                     <div className='container mx-auto px-4 grid gap-16'>
                         {
                             categoryRes?.grid?.map((item: any, idx: number) => (

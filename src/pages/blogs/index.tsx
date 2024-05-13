@@ -3,8 +3,11 @@ import Link from 'next/link'
 import React from 'react'
 import Featured_Posts from '@/components/blog/featured-post'
 import Image from 'next/image'
+import { client } from '../../../sanity/lib/client'
+import { Qblogs } from '../../../sanity/queries'
 
-export default function Blogs() {
+export default function Blogs({blogs}:any) {
+    console.log("🚀 ~ Blogs ~ blogs:", blogs)
     return (
         <>
             <PageBanner title="Blogs" />
@@ -51,3 +54,16 @@ export default function Blogs() {
         </>
     )
 }
+
+
+
+
+export async function getServerSideProps() {
+    const blogs = await client.fetch(Qblogs);
+    return {
+      props: {
+        blogs,
+        preview: true
+      }
+    };
+  }

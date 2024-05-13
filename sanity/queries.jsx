@@ -13,10 +13,11 @@ export const Qproducts = `*[ _type == "products"]{
      slug,
      excerpt,
      content,
-     categories->{
+     categories[] ->{
           name,
           slug
-     }
+     },
+     
 }`;
 
 export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]`;
@@ -45,4 +46,45 @@ export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug
      metatitle,
      metadescription,
      metatags
+}`;
+
+
+export const QNavcategories = `*[ _type == "categories"]{
+     name,
+     icon{
+          asset->{
+               url
+          }
+     },
+     slug
+}`;
+
+
+export const Qblogs = `*[ _type == "blogs"]{
+     title,
+     _createdAt,
+     image{
+          asset->{
+               url
+          }
+     },
+     slug,
+     excerpt,
+     content,
+     
+}`;
+
+
+export const QSingleBlog = `*[ _type == "blogs" && slug.current == $slug ][0]{
+     title,
+     _createdAt,
+     image{
+          asset->{
+               url
+          }
+     },
+     slug,
+     excerpt,
+     content,
+     
 }`;
