@@ -40,9 +40,9 @@ FAQS
  
  Thank you page
  -->
-git remote add origin https://github.com/khsubhani/packhoop.git
+git remote set-url origin https://github.com/mufaqar/packhoop.git 
 
 https://github.com/mufaqar/packhoop.git 
 
 
-git remote set-url origin https://github.com/khsubhani/packhoop.git
+git remote set-url origin https://github.com/mufaqar/packhoop.git 
