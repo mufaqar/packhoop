@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 const Slug = ({ productRes, categoryRes, productsRes, faqRes }: any) => {
      const router = useRouter()
      const param = router?.query?.slug
-     const productByCategory = productsRes?.filter((p:any)=>p?.categories?.some((c:any)=>c?.slug?.current === productRes.categories?.[0].slug?.current))
+     const productByCategory = productsRes?.filter((p:any)=>p?.categories?.some((c:any)=>c?.slug?.current === productRes?.categories?.[0]?.slug?.current))
      const relatedProducts = productByCategory.filter((item:any)=>item.title !== productRes.title)
      return (
           <>
