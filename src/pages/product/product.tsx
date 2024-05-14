@@ -13,8 +13,7 @@ import Head from 'next/head'
 import DesignBox from '@/components/home/designBox'
 
 
-export default function Product({ productRes, faqRes }: any) {
-    console.log("🚀 ~ file: product.tsx:16 ~ Product ~ productRes:", productRes)
+export default function Product({ productRes, faqRes, relatedProducts }: any) {
     return (
         <>
             <Head>
@@ -59,7 +58,7 @@ export default function Product({ productRes, faqRes }: any) {
                         </div>
                         <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
                             {
-                                [0]?.map((product: any, i: number) => (
+                                relatedProducts?.map((product: any, i: number) => (
                                     <DesignBox
                                         key={i}
                                         slug={product.slug}

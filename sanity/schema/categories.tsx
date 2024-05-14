@@ -38,6 +38,11 @@ export const categories = {
       }
     },
     {
+      title: 'Icon',
+      name: 'icon',
+      type: 'image',
+    },
+    {
       name: 'excerpt',
       type: 'text',
       title: 'Excerpt'

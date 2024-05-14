@@ -3,12 +3,17 @@ import { client } from '../../sanity/lib/client';
 import { QSingleCategory, QSingleProducts, Qfaqs, Qproducts } from '../../sanity/queries';
 import Product from './product/product';
 import Category from './category';
+import { useRouter } from 'next/router';
 
 const Slug = ({ productRes, categoryRes, productsRes, faqRes }: any) => {
+     const router = useRouter()
+     const param = router?.query?.slug
+     const productByCategory = productsRes?.filter((p:any)=>p?.categories?.some((c:any)=>c?.slug?.current === productRes?.categories?.[0]?.slug?.current))
+     const relatedProducts = productByCategory.filter((item:any)=>item.title !== productRes.title)
      return (
           <>
                {
-                    productRes ? <Product productRes={productRes} faqRes={faqRes}/> : <Category categoryRes={categoryRes} productsRes={productsRes} faqRes={faqRes}/>
+                    productRes ? <Product productRes={productRes} relatedProducts={relatedProducts} faqRes={faqRes}/> : <Category categoryRes={categoryRes} productsRes={productByCategory} faqRes={faqRes}/>
                }
           </>
      )

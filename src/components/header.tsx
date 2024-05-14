@@ -8,11 +8,15 @@ import { FaBars } from 'react-icons/fa'
 import { IoMdClose } from 'react-icons/io'
 import SearchForm from './searchForm'
 import MegaMenu from './mega-menu'
+import { client } from '../../sanity/lib/client'
+import { QNavcategories } from '../../sanity/queries'
 
 function Header() {
+
   const [openNav, setOpenNav] = useState(false);
   const [openSearch, setOpenSearch] = useState(false)
   const [megaMenu, setMegaMenu] = useState(false)
+  const [categories, setCategories] = useState()
 
   const menuRef = useRef<HTMLLIElement>(null);
 
@@ -28,8 +32,15 @@ function Header() {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
+
   }, []);
 
+  useEffect(()=>{
+    (async()=>{
+      const categories = await client.fetch(QNavcategories);
+      setCategories(categories)
+    })()
+  },[])
 
   return (
     <>
@@ -57,7 +68,7 @@ function Header() {
                 </Link>
                 <span><BsChevronDown className="ml-1 inline-block text-sm font-normal text-title_Clr group-hover:text-secondary" /></span>
                 <div onMouseLeave={() => setMegaMenu(false)} className={`${megaMenu === true ? "block container md:px-10 left-1/2 md:-translate-x-1/2 md:absolute top-20 static z-50 " : "hidden"}`}>
-                  <MegaMenu setMegaMenu={setMegaMenu} />
+                  <MegaMenu setMegaMenu={setMegaMenu} categories={categories}/>
                 </div>
               </li>
               <li className='flex items-center cursor-pointer group'>
