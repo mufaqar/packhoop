@@ -27,6 +27,11 @@ export const products = {
       }
     },
     {
+      title: 'Featured',
+      name: 'featured',
+      type: 'boolean'
+    },    
+    {
       name: 'excerpt',
       type: 'text',
       title: 'Excerpt'

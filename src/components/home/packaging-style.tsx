@@ -17,7 +17,7 @@ function Packaging_Style({ data }: any) {
                 </div>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>
                     {
-                        data.map((category: any, i: number) => (
+                        data.slice(0,4).map((category: any, i: number) => (
                             <PackingBox
                                 key={i}
                                 title={category?.name}

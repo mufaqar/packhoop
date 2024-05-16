@@ -155,11 +155,19 @@ export const categories = {
     //     }
     //   ]
     // },
-    {
-      name: 'orderprocess',
+     {
       title: 'Order Process',
-      type: 'reference',
-      to: [{ type: 'orderprocess' }]
+      name: 'orderprocess',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'orderprocess'},
+          ]
+        }
+      ]
     },
+    
   ]
 }

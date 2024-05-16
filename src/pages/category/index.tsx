@@ -13,6 +13,7 @@ import { urlForImage } from '../../../sanity/lib/image'
 import Head from 'next/head'
 
 export default function Category({ categoryRes, productsRes, faqRes }: any) {
+console.log("🚀 ~ Category ~ categoryRes:", categoryRes)
 
     return (
         <>
@@ -71,7 +72,7 @@ export default function Category({ categoryRes, productsRes, faqRes }: any) {
 
                 <Cta />
                 <Cat_Faqs faqRes={faqRes} />
-                <Order_Process />
+                <Order_Process data={categoryRes?.orderprocess}/>
             </main>
         </>
     )

@@ -11,13 +11,13 @@ import { client } from '../../sanity/lib/client'
 import {Qcategories, Qfaqs, Qproducts, Qtestimonials} from '../../sanity/queries'
 const inter = Inter({ subsets: ['latin'] })
 export default function Home({testimonialsRes, faqRes, categoriesRes, productsRes}:any) {
-
+  const fproduct = productsRes?.filter((item:any)=>item.featured === true)
   return (
     <main className={``} >
       <MainBanner />
       <Packaging_Style data={categoriesRes}/>
       <HowIt_work />
-      <Packing_Design data={productsRes} title="Custom Packaging Boxes" content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques."/>
+      <Packing_Design data={fproduct} title="Custom Packaging Boxes" content="Choose a packaging style for your custom boxes, start designing with us, and get your boxes with the most advanced printing techniques."/>
       <Why_ChooseUs />
       <Testimonials data={testimonialsRes}/>
       <Faqs data={faqRes}/>

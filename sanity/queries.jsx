@@ -13,6 +13,7 @@ export const Qproducts = `*[ _type == "products"]{
      slug,
      excerpt,
      content,
+     featured,
      categories[] ->{
           name,
           slug
@@ -20,7 +21,23 @@ export const Qproducts = `*[ _type == "products"]{
      
 }`;
 
-export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]`;
+export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]{
+     name,
+     metatitle,
+     metadescription,
+     metatags,
+     slug,
+     icon,
+     excerpt,
+     image,
+     secound_title,
+     content,
+     grid,
+     orderprocess[]->{
+          title,
+          detail
+     }
+}`;
 
 export const QSingleProducts = ` *[ _type == "products" && slug.current == $slug ][0]{
      title,

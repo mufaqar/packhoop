@@ -16,7 +16,7 @@ function Packing_Design({ data, title, content }: any) {
                 </div>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-16'>
                     {
-                        data.map((product: any, i: number) => (
+                        data?.slice(0,8)?.map((product: any, i: number) => (
                             <DesignBox
                                 key={i}
                                 title={product.title}
