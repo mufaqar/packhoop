@@ -10,6 +10,10 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.container{
+  max-width: 1536px;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -30,7 +34,7 @@
 
 @font-face {
   font-family: 'EffraMedium';
-  src: url('../../public/fonts/Effra-Medium.ttf');
+  src: url('../../public/fonts/Effra_Trial_Rg.ttf');
 }
 
 @font-face {
@@ -51,7 +55,7 @@ li {
 
 a,
 span {
-  font-family: 'SourceSansProRegular';
+  font-family: 'EffraMedium';
 }
 
 body,
