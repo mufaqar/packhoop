@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaCircleArrowRight } from 'react-icons/fa6'
+import { IoCheckmarkCircle } from "react-icons/io5";
 
 function Cat_Faqs({faqRes}:any) {
     const [open, setOpen] = useState<any>(0);
@@ -17,7 +17,7 @@ function Cat_Faqs({faqRes}:any) {
             <div className='container mx-auto px-4'>
                 <div>
                     <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr'>
-                        Frequently Asked Questions
+                        FAQ's
                     </h2>
                     <p className='text-lg font-normal text-txt_Clr mx-auto mt-5'>
                         Can't find what you're looking for? Check out our help center.
@@ -26,8 +26,8 @@ function Cat_Faqs({faqRes}:any) {
                 <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-7 justify-between mt-10'>
                     {faqRes?.map((faq: any, index: number) => (
                         <div key={index}>
-                            <h3 className='md:text-2xl text-lg font-semibold text-title_Clr flex items-center cursor-pointer' onClick={() => handleFaq(index)}>
-                                <FaCircleArrowRight className="text-secondary w-16" />
+                            <h3 className='md:text-xl text-lg font-semibold text-title_Clr flex items-center cursor-pointer' onClick={() => handleFaq(index)}>
+                                <IoCheckmarkCircle className="text-secondary opacity-60 w-16 text 2xl" />
                                 {faq.question}
                             </h3>
                             <div className={`mt-3 md:pl-16 pl-10 `}>

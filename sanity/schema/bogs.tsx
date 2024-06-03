@@ -32,6 +32,12 @@ export const blogs = {
       title: 'Excerpt'
     },
     {
+      title: 'category',
+      name: 'Category',
+      type: 'reference',
+      to: [{type: 'blogCategories'}]
+    },
+    {
       name: 'metadescription',
       type: 'text',
       title: 'Meta Description'
@@ -86,5 +92,6 @@ export const blogs = {
         },
       ]
     },
+
   ]
 }

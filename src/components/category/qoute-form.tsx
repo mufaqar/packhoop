@@ -115,7 +115,6 @@ function Qoute_Form() {
         </div>
 
         <div className="w-full flex gap-3">
-          
           <div className="w-1/3">
             <label
               htmlFor="Length"
@@ -132,7 +131,7 @@ function Qoute_Form() {
             />
           </div>
           <div className="w-1/3">
-          <label
+            <label
               htmlFor="Width"
               className="text-sm font-medium leading-none hidden"
             >
@@ -147,7 +146,7 @@ function Qoute_Form() {
             />
           </div>
           <div className="w-1/3">
-          <label
+            <label
               htmlFor="Depth"
               className="text-sm font-medium leading-none hidden"
             >
@@ -162,19 +161,84 @@ function Qoute_Form() {
             />
           </div>
         </div>
+        <div className="w-full flex gap-3">
+          <div className="w-1/3">
+            <label
+              htmlFor="Unit"
+              className="text-sm font-medium leading-none hidden"
+            >
+              Select Unit
+            </label>
+            <select
+              className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-[5px] w-full"
+              id="Unit"
+              {...register("Unit", { required: true })}
+            >
+              <option value="Select Unit">Select Unit </option>
+              <option value="Cosmetics Box">Inches</option>
+              <option value="Cosmetics Box">CM</option>
+              <option value="Cosmetics Box">MM</option>
+            </select>
+            {/* {errors.packing && <span className='text-xs text-red-500'>This field is required</span>} */}
+          </div>
+          <div className="w-1/3">
+            <label
+              htmlFor="packing"
+              className="text-sm font-medium leading-none hidden"
+            >
+              Colors
+            </label>
+            <select
+              className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-[5px] w-full"
+              id="Colors"
+              {...register("Colors", { required: true })}
+            >
+              <option value="Colors">Colors </option>
+              <option value="Cosmetics Box">1 color</option>
+              <option value="Cosmetics Box">2 colors</option>
+              <option value="Cosmetics Box">3 colors</option>
+              <option value="Cosmetics Box">4 colors</option>
+              <option value="Cosmetics Box">5 colors</option>
+            </select>
+            {/* {errors.packing && <span className='text-xs text-red-500'>This field is required</span>} */}
+          </div>
+          <div className="w-1/3">
+            <label
+              htmlFor="packing"
+              className="text-sm font-medium leading-none hidden"
+            >
+              Select Stock
+            </label>
+            <select
+              className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-[5px] w-full"
+              id="Stock"
+              {...register("Stock", { required: true })}
+            >
+              <option value="Select Stock">Select Stock </option>
+              <option value="Cosmetics Box">12 PT</option>
+              <option value="Cosmetics Box">14 PT</option>
+              <option value="Cosmetics Box">16 PT</option>
+              <option value="Cosmetics Box">18 PT</option>
+              <option value="Cosmetics Box">20 PT</option>
+              <option value="Cosmetics Box">Kraft Stock</option>
+              <option value="Cosmetics Box">Rigid Stock</option>
+            </select>
+            {/* {errors.packing && <span className='text-xs text-red-500'>This field is required</span>} */}
+          </div>
+        </div>
         <div className="w-full">
           <label
             htmlFor="detail"
             className="text-sm font-medium leading-none hidden"
           >
-            Project Detail
+            Write your Message
           </label>
           <textarea
             className="text-sm font-medium text-txt_Clr bg-white p-4 border border-[#CACACA] focus:border-secondary  outline-none rounded-[5px] w-full"
             id="detail"
             {...register("detail", { required: true })}
             rows={5}
-            placeholder="Write your Project Details and Sizese"
+            placeholder="Write your Message"
           ></textarea>
           {/* {errors.detail && <span className='text-xs text-red-500'>This field is required</span>} */}
         </div>
@@ -183,7 +247,7 @@ function Qoute_Form() {
             type="submit"
             className="text-base font-semibold text-white bg-primary hover:bg-secondary px-4 py-3 rounded-[5px] w-full"
           >
-            {loading ? "SENDING..." : "SUBMIT"}
+            {loading ? "SENDING..." : "Get Inquiry"}
           </button>
         </div>
       </form>

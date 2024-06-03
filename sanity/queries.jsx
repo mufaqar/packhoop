@@ -21,6 +21,7 @@ export const Qproducts = `*[ _type == "products"]{
      
 }`;
 
+
 export const QSingleCategory = ` *[ _type == "categories" && slug.current == $slug ][0]{
      name,
      metatitle,
@@ -88,6 +89,10 @@ export const Qblogs = `*[ _type == "blogs"]{
      slug,
      excerpt,
      content,
+     category->{
+          name,
+          slug
+     }
      
 }`;
 

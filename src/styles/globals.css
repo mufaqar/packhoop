@@ -138,3 +138,46 @@ html {
 .grad_Bg {
   background-image: linear-gradient(to bottom, #2B4FB9 50%, white 50%);
 }
+
+
+
+.desc_content h4 {
+  font-size: 24px;
+  line-height: 30.72px;
+  color: #2A4CFF;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.desc_content p {
+  font-size: 18px;
+  line-height: 24.89px;
+  color: #000;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.desc_content p strong {
+  font-weight: 600;
+}
+
+.desc_content ul {
+  font-size: 18px;
+  line-height: 24.89px;
+  color: #000;
+  font-weight: 300;
+  margin-bottom: 20px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.desc_content ol {
+  font-size: 18px;
+  line-height: 24.89px;
+  color: #000;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.desc_content a {
+  text-decoration: underline;
+}

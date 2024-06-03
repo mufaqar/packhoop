@@ -13,7 +13,7 @@ import { urlForImage } from '../../../sanity/lib/image'
 import Head from 'next/head'
 
 export default function Category({ categoryRes, productsRes, faqRes }: any) {
-console.log("🚀 ~ Category ~ categoryRes:", categoryRes)
+console.log("🚀 ~ Category ~ productsRes:", productsRes)
 
     return (
         <>
@@ -35,7 +35,7 @@ console.log("🚀 ~ Category ~ categoryRes:", categoryRes)
                     <div className='container mx-auto px-4'>
                         <div>
                             <h2 className='md:text-4xl text-3xl font-semibold text-title_Clr'>
-                                Mailer Boxes Products
+                                {categoryRes?.name} Products
                             </h2>
                         </div>
                         <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-7 mt-10'>

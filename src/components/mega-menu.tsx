@@ -5,16 +5,16 @@ import React from "react";
 const MegaMenu = ({ setMegaMenu, categories }: any) => {  
 
   return (
-    <div className="container mx-auto bg-white md:shadow-[0_7px_10px_-2px_rgba(0,0,0,0.25)] md:px-7 pt-4">
-      <div className="md:hidden flex flex-col gap-5">
-        {[0, 1, 2, 3, 4, 5]?.map((item: any, idx: number) => {
+    <div className="container mx-auto bg-white md:shadow-[0_7px_10px_-2px_rgba(0,0,0,0.25)] md:px-7 pt-4 !max-w-[1200px]">
+      <div className="md:hidden grid grid-cols-2 gap-5">
+        {categories?.map((item: any, idx: number) => {
           return (
             <Link
               key={idx}
               href={`${item?.link}`}
               className="text-base font-normal text-title_Clr hover:text-secondary"
             >
-              Apparel
+              {item.name}
             </Link>
           );
         })}
@@ -76,10 +76,12 @@ const MegaMenu = ({ setMegaMenu, categories }: any) => {
           <Image
             src="/images/design/1.png"
             alt="feature"
-            width={306}
-            height={338}
-            className="w-full"
+            width={200}
+            height={238}
+            className="w-full h-[300px] object-cover"
           />
+          <h4 className="text-xl py-2">Inspiration Library</h4>
+          <p className="text-gray-600">Just starting your custom packaging journey but don’t know where to start? Get inspired by browsing our extensive library of creative packaging concepts and see how brands from your industry are designing their packaging!</p>
         </div>
       </div>
     </div>

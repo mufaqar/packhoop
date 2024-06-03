@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Technical_Specs({ mailerbox }: any) {
-    console.log("🚀 ~ file: technical-specs.tsx:4 ~ Technical_Specs ~ mailerbox:", mailerbox)
     return (
         <section className='py-16 bg-[#F7F7F7]'>
             <div className='container mx-auto px-4'>
